@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explora Riviera Maya</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="encabezado__contenido">
+      <h1>Explora Riviera Maya</h1>
+      <p>Naturaleza, cultura, aventura y gastronomía</p>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+
+    <section class="panel">
+      <div>
+        <h2>Experiencias disponibles</h2>
+        <p id="estado">Cargando experiencias...</p>
+      </div>
+      <div class="controles">
+        <input type="search" id="buscador" placeholder="Buscar experiencia...">
+        
+        <select id="ordenPrecio">
+          <option value="normal">Orden original</option>
+          <option value="ascendente">Menor precio</option>
+          <option value="descendente">Mayor precio</option>
+        </select>
+
+        <div class="filtro-precio-max">
+          <label for="precioMax">Precio máximo:</label>
+          <input type="number" id="precioMax" min="0" step="50" placeholder="Sin límite">
+          <span>MXN</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filtros por botones únicos (sin Recreativo ni Bienestar) -->
+    <div class="filtros">
+      <button class="activo" data-categoria="todas">Todas</button>
+      <button data-categoria="naturaleza">Naturaleza</button>
+      <button data-categoria="cultura">Cultura</button>
+      <button data-categoria="aventura">Aventura</button>
+      <button data-categoria="gastronomia">Gastronomía</button>
+    </div>
+
+    <section id="catalogo" class="catalogo"></section>
+    <p id="sinResultados" class="sin-resultados oculto">No se encontraron experiencias.</p>
+
+    <section class="resumen">
+      <div class="resumen__encabezado">
+        <h2>Mi reservación</h2>
+        <button id="btnVaciar" class="btn-vaciar oculto">🗑️ Vaciar reservación</button>
+      </div>
+      <p id="mensajeValidacion" class="mensaje-validacion oculto"></p>
+      <div id="listaReservas">
+        <p>No hay experiencias seleccionadas.</p>
+      </div>
+      <div class="resumen__totales">
+        <p>Personas totales: <strong id="totalPersonas">0</strong></p>
+        <p class="total">Total: <span id="total">$0 MXN</span></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Proyecto académico de desarrollo front-end · Riviera Maya 2026</p>
+  </footer>
+
+</body>
+</html>
